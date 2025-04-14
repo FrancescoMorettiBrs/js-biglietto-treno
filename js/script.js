@@ -13,18 +13,22 @@
 // OUTPUT
 // Prezzo del biglietto scontato o non (in decimali)
 
-const kmTotali = prompt ("Quanti km devi percorrere?");
-console.log(kmTotali);
+let kmTotali;
+do {
+    kmTotali = parseFloat(prompt("Quanti km devi percorrere?"));
+} while (isNaN(kmTotali) || kmTotali <= 0 || kmTotali > 500);
 const costoAlKm = 0.21;
-const età = prompt ("Quanti anni hai?");
-console.log(età);
+let età;
+do {
+    età = parseInt(prompt("Quanti anni hai?"));
+} while (isNaN(età) || età <= 0 || età > 120);
 const scontoMinorenni = 20;
 const scontoOver65 = 40;
 
 const prezzoTotaleViaggio = (kmTotali * costoAlKm);
 console.log("Il prezzo totale è: €" + prezzoTotaleViaggio.toFixed(2));
 
-let = prezzoTotaleViaggioScontato = prezzoTotaleViaggio;
+let prezzoTotaleViaggioScontato = prezzoTotaleViaggio;
 
 if (età < 18) {
     const sconto = (prezzoTotaleViaggio * scontoMinorenni / 100);
